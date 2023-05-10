@@ -1,0 +1,103 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+weather_aus_raw:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/weatherAUS.csv (2).zip
+  layer: raw
+
+df1:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/df1.csv
+  layer: intermediate
+
+df1_treat_training_data:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/df1_treat_training_data.csv
+  layer: intermediate
+
+X_training:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/X_training.csv
+  layer: intermediate
+
+y_training:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/y_training.csv
+  layer: intermediate
+
+X_training_le:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/X_training_le.csv
+  layer: intermediate
+
+logreg:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/logreg.pkl
+  layer: models
+
+y_pred_train:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/y_pred_train.csv
+  layer: model_output
+
+y_pred_test:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/y_pred_test.csv
+  layer: model_output
+
+r2_score_train:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/r2_score_train.csv
+  layer: model_output
+
+r2_score_test:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/r2_score_test.csv
+  layer: model_output
+
+
+inference_data:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/inference_data.csv
+  layer: reporting
+
+inference_data_treat:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/inference_data_treat.csv
+  layer: reporting
+
+X_infer:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/X_infer.csv
+  layer: reporting
+
+
+X_infer_le:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/X_infer_le.csv
+  layer: reporting
+
+y_pred_infer:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/y_pred_infer.csv
+  layer: reporting
+
+infer_data:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/infer_data.csv
+  layer: reporting
+
+y_pred_infer:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/y_pred_infer.csv
+  layer: reporting
+
+concate_infer:
+  type: pandas.CSVDataSet
+  filepath: data/08_reporting/concate_infer.csv
+  layer: reporting
+
+
